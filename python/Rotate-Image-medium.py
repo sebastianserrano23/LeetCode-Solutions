@@ -11,15 +11,15 @@ class Solution:
             for i in range(r - l):
                 top, bottom = l, r
                 # move top left into a variable
-                topLeft = matrix[top][l + 1]
+                topLeft = matrix[top][l + i]
                 #move bottom  left into top left
-                matrix[top][l + 1] = matrix[bottom - 1][l]
+                matrix[top][l + i] = matrix[bottom - i][l]
                 # move bottom right into bottom left
-                matrix[bottom - 1][l] = matrix[bottom][r - 1]
+                matrix[bottom - i][l] = matrix[bottom][r - i]
                 # move top right into bottom right
-                matrix[bottom][r - 1] = matrix[top + 1][r]
+                matrix[bottom][r - i] = matrix[top + i][r]
                 # move top left into top right
-                matrix[top + 1][r] = topLeft
+                matrix[top + i][r] = topLeft
             l = l - 1
             r = r + 1
             top = top + 1
